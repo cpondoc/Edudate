@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}Events{% endblock %}
+{% block body %}
+<div class="container">
+    <h1 class="title"><b>🗓 <u>Events</u></b></h1>
+    <br />
+    <h4 class="title-description">See how to get involved in a plethora of fun activities and subjects in and around your community.</h4>
+</div>
+<br />
+<div class="container">
+    {% for event in events %}
+        <div class="card card">
+            <div class="card-body">
+                <h2 class="event-title">{{event.name}}</h2>
+                <h4 class="event-date">📅 {{event.date}}</h4>
+                <h4 class="event-organizer">🏫 {{event.organizers}}</h4>
+                <p class="event-description">{{event.description}}</p>
+            </div>
+        </div>
+    <br />
+      {% endfor %}
+</div>
+<br />
+{% endblock %}

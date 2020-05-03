@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title %}Request Confirmation{% endblock %}
+{% block body %}
+<div class="container">
+    <h1 class="title"><b>✅ <u>Request Confirmation!</u></b></h1>
+    <br />
+    <h4 class="title-description">Congrats! Your request to {{tutor.name}} was successfully submitted!</h4>
+    <br />
+    <a href="/tutors"><button type="button" class="btn btn-dark">Go back to all tutors →</button></a>
+</div>
+<br />
+<br />
+{% endblock %}

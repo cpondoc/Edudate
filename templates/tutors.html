@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block title %}Tutors{% endblock %}
+{% block body %}
+<div class="container">
+    <h1 class="title"><b>🙋‍♂️ <u>Tutors</u></b></h1>
+    <br />
+    <h4 class="title-description">Browse from our selection of amazing peer tutors, whose diverse talents range from model student athletes to research interns.</h4>
+</div>
+<br />
+<div class="container">
+    {% include 'includes/_categories.html' %}
+</div>
+<div class="container">
+  <div class="card-columns">
+      {% for tutor in tutors %}
+      <a href="/tutors/{{tutor.id}}" class="tutor-link">
+          <div class="card tutor-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <img src="/assets/{{tutor.image}}" height="150px" />
+                </div>
+                <div class="col-sm-9">
+                  <h4 class="tutor-name"><b>{{tutor.name}}</b></h4>
+                <h6><span class="tutor-grade badge badge-success">{{tutor.grade}}</span></h6>
+                <h5>🏫 {{tutor.school}}</h5>
+                <p class="tutor-description"><em>"{{tutor.personality}}"</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <br />
+      {% endfor %}
+    </div>
+</div>
+<br />
+<br />
+{% endblock %}

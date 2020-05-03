@@ -1,0 +1,48 @@
+nav.navbar {
+    background-color: white !important;
+    font-family: 'Slabo 27px', serif;
+}
+button {
+    font-family: 'Slabo 27px', serif;
+    font-size: 20px !important;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    }
+h1 {
+    font-family: 'Slabo 27px', serif;
+}
+h4.title-description {
+    font-size: 35px;
+}
+a.nav-link {
+    font-size: 18px !important;
+}
+a.navbar-brand {
+    font-size: 30px !important;
+}
+div.image-div {
+    text-align: center;
+}
+div.gray {
+    background-color: #f8f9fa;
+}
+div.on-left {
+    text-align: right;
+}
+div.call-to-action {
+    text-align: center;
+}
+h1.call-to {
+    font-size: 55px;
+}
+footer {
+    text-align: center;
+    font-family: 'Slabo 27px', serif;
+}
+div.header {
+    text-align: center !important;
+}
+div.category {
+    text-align: center !important;
+}

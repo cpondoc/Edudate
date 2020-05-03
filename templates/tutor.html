@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% block title %}View Tutor{% endblock %}
+{% block body %}
+<div class="container">
+    <h1 class="title"><b>🔍 <u>View Tutor</u></b></h1>
+    <br />
+    <h4 class="title-description">Get to know one of your peers a bit closer.</h4>
+    <br />
+    <a href="/tutors"><button type="button" class="btn btn-dark">Go back to all tutors →</button></a>
+</div>
+<br />
+<br />
+<div class="container">
+    <div class="card view-tutor-card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <img src="/assets/{{tutor.image}}" height="315px" />
+            </div>
+            <div class="col-sm-9">
+              <h2 class="view-tutor-name"><b>{{tutor.name}}</b>
+                <span style="float:right;">
+                  <button type="button" class="btn btn-primary contact-button" data-toggle="modal" data-target="#exampleModal">
+                    <h2 class="email-contact">✉️</h2>
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Contact {{tutor.name}}</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form method="POST" action="reach-out">
+                            <div class="form-group">
+                              <label for="student-name" class="label-contact"><b>Name</b></label>
+                              <input name="student-name" type="text" class="form-control" id="student-name" aria-describedby="student-name-help" placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                              <label for="student-email" class="label-contact"><b>Email address</b></label>
+                              <input name="email" type="email" class="form-control" id="student-email" aria-describedby="student-email-help" placeholder="Enter Email">
+                              <small id="student-email-help" class="form-text text-muted form-help">We'll only share your email with your prospective tutor.</small>
+                            </div>
+                            <div class="form-group">
+                              <label for="student-description" class="label-contact"><b>Description of Tutoring Needs</b></label>
+                              <textarea name="student-description" class="form-control" id="student-description" rows="4" aria-describedby="student-description-help"></textarea>
+                              <small id="student-description-help" class="form-text text-muted form-help">Please be as specific as possible.</small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" value="submit" class="btn btn-primary form-submit">Submit</button>
+                        </div>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </h2>
+            <h6><span class="view-tutor-grade badge badge-success">{{tutor.grade}}</span></h6>
+            <h4>🏫 {{tutor.school}}</h4>
+            <p class="view-tutor-description"><em>"{{tutor.personality}}"</em></p>
+            <p class="view-tutor-bio">{{tutor.bio}}</p>
+            <!-- Button trigger modal -->
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<br />
+{% endblock %}
